@@ -220,7 +220,7 @@ if ($Aa=='User'){
                               ?>
                             </div>
                             <!-- /.list-group -->
-                            <a href="product.php" class="btn btn-default btn-block">Ver todos los lotes</a>
+                            <a href="inventory.php" class="btn btn-default btn-block">Ver todos los lotes</a>
                         </div>
                         <!-- /.panel-body -->
                     </div></div></div></div></div></div>

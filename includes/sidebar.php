@@ -83,18 +83,19 @@
         Tablas
       </div>
       <!-- Tables Buttons -->
-      <li class="nav-item">
-        <a class="nav-link" href="customer.php">
-          <i class="fas fa-fw fa-user"></i>
-          <span>Cliente</span></a>
-      </li>
-
+      
       <li class="nav-item">
         <a class="nav-link" href="employee.php">
           <i class="fas fa-fw fa-user"></i>
           <span>Empleado</span></a>
       </li>
       
+      <li class="nav-item">
+        <a class="nav-link" href="customer.php">
+          <i class="fas fa-fw fa-user"></i>
+          <span>Cliente</span></a>
+      </li>
+
       <li class="nav-item">
         <a class="nav-link" href="product.php">
           <i class="fas fa-fw fa-table"></i>
