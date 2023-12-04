@@ -40,7 +40,7 @@ include'../includes/sidebar.php';
                </thead>
           <tbody>
 <?php                  
-    query = 'SELECT * FROM product p join customer c on p.CUST_ID=c.CUST_ID join category ca on p.CATEGORY_ID=ca.CATEGORY_ID GROUP BY PRODUCT_CODE;';
+    $query = 'SELECT * FROM product p join customer c on p.CUST_ID=c.CUST_ID join category ca on p.CATEGORY_ID=ca.CATEGORY_ID GROUP BY PRODUCT_CODE;';
     $result = mysqli_query($db, $query) or die (mysqli_error($db));
         while ($row = mysqli_fetch_assoc($result)) {            
             echo '<tr>';
