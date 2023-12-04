@@ -111,28 +111,28 @@ include'../includes/sidebar.php';
                 <div class="col-sm-3 py-1"></div>
                 <div class="col-sm-4 py-1">
                   <h4>
-                  Monto en efectivo: ₱ <?php echo number_format($cash, 2); ?>
+                  Monto en efectivo: S/ <?php echo number_format($cash, 2); ?>
                   </h4>
                   <table width="100%">
                     <tr>
                       <td class="font-weight-bold">Subtotal</td>
-                      <td class="text-right">₱ <?php echo $sub; ?></td>
+                      <td class="text-right">S/ <?php echo $sub; ?></td>
                     </tr>
                     <tr>
                       <td class="font-weight-bold">Menos IVA</td>
-                      <td class="text-right">₱ <?php echo $less; ?></td>
+                      <td class="text-right">S/ <?php echo $less; ?></td>
                     </tr>
                     <tr>
                       <td class="font-weight-bold">Neto de IVA</td>
-                      <td class="text-right">₱ <?php echo $net; ?></td>
+                      <td class="text-right">S/ <?php echo $net; ?></td>
                     </tr>
                     <tr>
                       <td class="font-weight-bold">Agregar IVA</td>
-                      <td class="text-right">₱ <?php echo $add; ?></td>
+                      <td class="text-right">S/ <?php echo $add; ?></td>
                     </tr>
                     <tr>
                       <td class="font-weight-bold">Total</td>
-                      <td class="font-weight-bold text-right text-primary">₱ <?php echo $grand; ?></td>
+                      <td class="font-weight-bold text-right text-primary">S/ <?php echo $grand; ?></td>
                     </tr>
                   </table>
                 </div>

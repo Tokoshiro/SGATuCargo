@@ -71,14 +71,14 @@ function pre_r($array){
                 <div class="col-lg-12">
                   <div class="card shadow mb-0">
                   <div class="card-header py-2">
-                    <h4 class="m-1 text-lg text-primary">Categoria de almacenes</h4>
+                    <h4 class="m-1 text-lg text-primary">Elegir contrato</h4>
                   </div>
                         <!-- /.panel-heading -->
                         <div class="card-body">
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs">
                               <li class="nav-item">
-                                <a class="nav-link" href="#" data-target="#keyboard" data-toggle="tab">Lotes</a>
+                                <a class="nav-link" href="#" data-target="#keyboard" data-toggle="tab">Contratos</a>
                               </li>
                             </ul>
 
@@ -104,7 +104,7 @@ function pre_r($array){
   
         <table class="table">    
         <tr>  
-             <th width="55%">Nombre del producto</th>  
+             <th width="55%">Lote perteneciente a</th>  
              <th width="10%">Cantidad</th>  
              <th width="15%">Precio</th>  
              <th width="15%">Total</th>  
@@ -131,12 +131,12 @@ function pre_r($array){
 
            <td>
             <input type="hidden" name="price[]" value="<?php echo $product['price']; ?>">
-            ₱ <?php echo number_format($product['price']); ?>
+            S/ <?php echo number_format($product['price']); ?>
           </td>  
 
            <td>
             <input type="hidden" name="total" value="<?php echo $product['quantity'] * $product['price']; ?>">
-            ₱ <?php echo number_format($product['quantity'] * $product['price'], 2); ?></td>  
+            S/ <?php echo number_format($product['quantity'] * $product['price'], 2); ?></td>  
            <td>
                <a href="pos.php?action=delete&id=<?php echo $product['id']; ?>">
                     <div class="btn bg-gradient-danger btn-danger"><i class="fas fa-fw fa-trash"></i></div>
@@ -158,5 +158,5 @@ function pre_r($array){
 
 <?php
 include 'posside.php';
-include'../includes/footer.php';
+include '../includes/footer.php';
 ?>

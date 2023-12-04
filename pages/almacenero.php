@@ -117,12 +117,12 @@ function pre_r($array){
           </td>  
            <td>
             <input type="hidden" name="price[]" value="<?php echo $product['price']; ?>">
-            ₱ <?php echo number_format($product['price']); ?>
+            S/ <?php echo number_format($product['price']); ?>
           </td>  
 
            <td>
             <input type="hidden" name="total" value="<?php echo $product['quantity'] * $product['price']; ?>">
-            ₱ <?php echo number_format($product['quantity'] * $product['price'], 2); ?></td>  
+            S/ <?php echo number_format($product['quantity'] * $product['price'], 2); ?></td>  
            <td>
                <a href="pos.php?action=delete&id=<?php echo $product['id']; ?>">
                     <div class="btn bg-gradient-danger btn-danger"><i class="fas fa-fw fa-trash"></i></div>
