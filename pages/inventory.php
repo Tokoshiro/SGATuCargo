@@ -51,7 +51,7 @@ include'../includes/sidebar.php';
             echo '<td>'. $row['CNAME'].'</td>';
             echo '<td>'. $row['DATE_STOCK_IN'].'</td>';
                   echo '<td align="right">
-                          <a type="button" class="btn btn-primary bg-gradient-primary" href="inv_searchfrm.php?action=edit & id='.$row['PRODUCT_CODE'] . '"><i class="fas fa-fw fa-th-list"></i> Ver</a>
+                          <a type="button" class="btn btn-primary bg-gradient-primary" href="inv_searchfrm.php?action=edit & id='.$row['PRODUCT_ID'] . '"><i class="fas fa-fw fa-th-list"></i> Ver</a>
                       </div> </td>';
             echo '</tr> ';
                     }

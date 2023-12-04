@@ -32,7 +32,7 @@ $opt .= "</select>";
 
 //CONTRAC_ID
 
-  $query = 'SELECT PRODUCT_ID, NAME,PRODUCT_CODE,FIRST_NAME,DISPONIBILIDAD,COMPANY_NAME, c.CNAME FROM product p join category c on p.CATEGORY_ID=c.CATEGORY_ID JOIN supplier s ON p.SUPPLIER_ID=s.SUPPLIER_ID WHERE PRODUCT_ID ='.$_GET['id'];
+  $query = 'SELECT * FROM product p join customer c on p.CUST_ID=c.CUST_ID join category ca on p.CATEGORY_ID=ca.CATEGORY_ID WHERE PRODUCT_ID ='.$_GET['id'];
   $result = mysqli_query($db, $query) or die(mysqli_error($db));
     while($row = mysqli_fetch_array($result))
     {   
@@ -41,17 +41,17 @@ $opt .= "</select>";
       $zzz = $row['PRODUCT_CODE'];
       $NAM = $row['FIRST_NAME'];
       $B = $row['DISPONIBILIDAD'];
-      $D = $row['COMPANY_NAME'];
       $E = $row['CNAME'];
     }
       $id = $_GET['id'];
 ?>
 
-  <center><div class="card shadow mb-4 col-xs-12 col-md-8 border-bottom-primary">
+  <center>
+    <div class="card shadow mb-4 col-xs-12 col-md-8 border-bottom-primary">
             <div class="card-header py-3">
-              <h4 class="m-2 font-weight-bold text-primary">Edit Inventory for : <?php echo $A ?></h4>
+              <h4 class="m-2 font-weight-bold text-primary">Editar Lote : <?php echo $A ?></h4>
             </div>
-            <a type="button" class="btn btn-primary bg-gradient-primary" href="inv_searchfrm.php?action=edit & id='<?php echo $zzz; ?>'"><i class="fas fa-fw fa-flip-horizontal fa-share"></i> Back</a>
+            <a type="button" class="btn btn-primary bg-gradient-primary" href="inv_searchfrm.php?action=edit & id='<?php echo $zzz; ?>'"><i class="fas fa-fw fa-flip-horizontal fa-share"></i> Atrás</a>
                 
             <div class="card-body">
 
@@ -60,7 +60,7 @@ $opt .= "</select>";
               
               <div class="form-group row text-left text-warning">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                Nombre del producto:
+                Nombre de Lote:
                 </div>
                 <div class="col-sm-9">
                   <input class="form-control" value="<?php echo $A; ?>" readonly>
@@ -68,7 +68,7 @@ $opt .= "</select>";
               </div>
               <div class="form-group row text-left text-warning">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                Código de producto:
+                Código de Lote:
                 </div>
                 <div class="col-sm-9">
                   <input class="form-control" value="<?php echo $zzz; ?>" readonly>
@@ -76,7 +76,7 @@ $opt .= "</select>";
               </div>
               <div class="form-group row text-left text-warning">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                Nombre del Cliente:
+                Perteneciente a:
                 </div>
                 <div class="col-sm-9">
                   <input class="form-control" value="<?php echo $NAM; ?>" readonly>
@@ -90,15 +90,7 @@ $opt .= "</select>";
                   <input class="form-control"  value="<?php echo $B; ?>" required>
                 </div>
               </div>
-              
-              <div class="form-group row text-left text-warning">
-                <div class="col-sm-3" style="padding-top: 5px;">
-                Proveedor:
-                </div>
-                <div class="col-sm-9">
-                  <input class="form-control" value="<?php echo $D; ?>" readonly>
-                </div>
-              </div>
+            
               <div class="form-group row text-left text-warning">
                 <div class="col-sm-3" style="padding-top: 5px;">
                 Categoría:
@@ -115,5 +107,5 @@ $opt .= "</select>";
           </div></center>
 
 <?php
-include'../includes/footer.php';
+include '../includes/footer.php';
 ?>

@@ -38,7 +38,6 @@ $query2 = 'SELECT NAME FROM product p join category c on p.CATEGORY_ID=c.CATEGOR
                      <th>Nombre de Cliente </th>
                      <th>Disponibilidad</th>
                      <th>Categoría</th>
-                     <th>Proveedor</th>
                      <th>Fecha de ocupación</th>
                      <th>Acción</th>
                    </tr>
@@ -46,7 +45,7 @@ $query2 = 'SELECT NAME FROM product p join category c on p.CATEGORY_ID=c.CATEGOR
           <tbody>
 
 <?php   
-$query = 'SELECT PRODUCT_ID, NAME,PRODUCT_CODE,  DISPONIBILIDAD, FIRST_NAME, CNAME, COMPANY_NAME, DATE_STOCK_IN FROM product p join category c on p.CATEGORY_ID=c.CATEGORY_ID JOIN supplier s ON p.SUPPLIER_ID=s.SUPPLIER_ID where PRODUCT_CODE ='.$_GET['id'];
+$query = 'SELECT * FROM product p join customer c on p.CUST_ID=c.CUST_ID join category ca on p.CATEGORY_ID=ca.CATEGORY_ID WHERE PRODUCT_ID ='.$_GET['id'];
         $result = mysqli_query($db, $query) or die (mysqli_error($db));
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '<tr>';
@@ -55,10 +54,9 @@ $query = 'SELECT PRODUCT_ID, NAME,PRODUCT_CODE,  DISPONIBILIDAD, FIRST_NAME, CNA
                 echo '<td>'. $row['FIRST_NAME'].'</td>';
                 echo '<td>'. $row['DISPONIBILIDAD'].'</td>';
                 echo '<td>'. $row['CNAME'].'</td>';
-                echo '<td>'. $row['COMPANY_NAME'].'</td>';
                 echo '<td>'. $row['DATE_STOCK_IN'].'</td>';
                 echo '<td align="right">
-                      <a type="button" class="btn btn-warning bg-gradient-warning" href="inv_edit.php?action=edit & id='.$row['PRODUCT_ID']. '"><i class="fas fa-fw fa-edit"></i> Edit</a>
+                      <a type="button" class="btn btn-warning bg-gradient-warning" href="inv_edit.php?action=edit & id='.$row['PRODUCT_ID']. '"><i class="fas fa-fw fa-edit"></i> Editar</a>
                           </div></td>';
                 echo '</tr> ';
                         }
