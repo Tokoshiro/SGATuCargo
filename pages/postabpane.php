@@ -4,24 +4,24 @@
                               <!-- 1ST TAB -->
                                 <div class="tab-pane fade in mt-2" id="keyboard">
                                   <div class="row">
-                                      <?php  $query = 'SELECT * FROM product WHERE CATEGORY_ID=5 GROUP BY PRODUCT_CODE ORDER by PRODUCT_CODE ASC';
+                                      <?php  $query = 'SELECT contrac.*, customer.* FROM contrac JOIN customer ON contrac.CUST_ID = customer.CUST_ID ORDER BY contrac.CONTRAC_ID ASC;';
                                         $result = mysqli_query($db, $query);
 
                                         if ($result):
                                             if(mysqli_num_rows($result)>0):
-                                                while($product = mysqli_fetch_assoc($result)):
+                                                while($contrac = mysqli_fetch_assoc($result)):
                                                 //print_r($product);
                                       ?>
                                     <div class="col-sm-4 col-md-2" >
-                                      <form method="post" action="pos.php?action=add&id=<?php echo $product['PRODUCT_ID']; ?>">
+                                      <form method="post" action="pos.php?action=add&id=<?php echo $contrac['CONTRAC_ID']; ?>">
                                           <div class="products">
-                                              <h6 class="text-info"><?php echo $product['NAME']; ?></h6>
-                                              <h6>₱ <?php echo $product['PRICE']; ?></h6>
-                                              <input type="text" name="quantity" class="form-control" value="1" />
-                                              <input type="hidden" name="name" value="<?php echo $product['NAME']; ?>" />
-                                              <input type="hidden" name="price" value="<?php echo $product['PRICE']; ?>" />
+                                              <h6 class="text-info"><?php echo $contrac['FIRST_NAME']; ?></h6>
+                                              <h6>S/ <?php echo $contrac['CANT_LOTES']* 1000; ?></h6>
+                                              <input type="hidden" name="name" value="<?php echo $contrac['FIRST_NAME']; ?>" />
+                                              <input type="hidden" name="price" value="<?php echo $contrac['CANT_LOTES']* 1000; ?>" />
+                                              <input type="hidden" name="quantity" value="1" />
                                               <input type="submit" name="addpos" style="margin-top:5px;" class="btn btn-info"
-                                                     value="Add" />
+                                                     value="Agregar" />
                                           </div>
                                       </form>
                                   </div>
@@ -47,7 +47,7 @@
                                       <form method="post" action="pos.php?action=add&id=<?php echo $product['PRODUCT_ID']; ?>">
                                           <div class="products">
                                               <h6 class="text-info"><?php echo $product['NAME']; ?></h6>
-                                              <h6>₱ <?php echo $product['PRICE']; ?></h6>
+                                              <h6>S/ <?php echo $product['PRICE']; ?></h6>
                                               <input type="text" name="quantity" class="form-control" value="1" />
                                               <input type="hidden" name="name" value="<?php echo $product['NAME']; ?>" />
                                               <input type="hidden" name="price" value="<?php echo $product['PRICE']; ?>" />
@@ -77,7 +77,7 @@
                                       <form method="post" action="pos.php?action=add&id=<?php echo $product['PRODUCT_ID']; ?>">
                                           <div class="products">
                                               <h6 class="text-info"><?php echo $product['NAME']; ?></h6>
-                                              <h6>₱ <?php echo $product['PRICE']; ?></h6>
+                                              <h6>S/ <?php echo $product['PRICE']; ?></h6>
                                               <input type="text" name="quantity" class="form-control" value="1" />
                                               <input type="hidden" name="name" value="<?php echo $product['NAME']; ?>" />
                                               <input type="hidden" name="price" value="<?php echo $product['PRICE']; ?>" />
@@ -107,7 +107,7 @@
                                       <form method="post" action="pos.php?action=add&id=<?php echo $product['PRODUCT_ID']; ?>">
                                           <div class="products">
                                               <h6 class="text-info"><?php echo $product['NAME']; ?></h6>
-                                              <h6>₱ <?php echo $product['PRICE']; ?></h6>
+                                              <h6>S/ <?php echo $product['PRICE']; ?></h6>
                                               <input type="text" name="quantity" class="form-control" value="1" />
                                               <input type="hidden" name="name" value="<?php echo $product['NAME']; ?>" />
                                               <input type="hidden" name="price" value="<?php echo $product['PRICE']; ?>" />
@@ -137,7 +137,7 @@
                                       <form method="post" action="pos.php?action=add&id=<?php echo $product['PRODUCT_ID']; ?>">
                                           <div class="products">
                                               <h6 class="text-info"><?php echo $product['NAME']; ?></h6>
-                                              <h6>₱ <?php echo $product['PRICE']; ?></h6>
+                                              <h6>S/ <?php echo $product['PRICE']; ?></h6>
                                               <input type="text" name="quantity" class="form-control" value="1" />
                                               <input type="hidden" name="name" value="<?php echo $product['NAME']; ?>" />
                                               <input type="hidden" name="price" value="<?php echo $product['PRICE']; ?>" />
@@ -167,7 +167,7 @@
                                       <form method="post" action="pos.php?action=add&id=<?php echo $product['PRODUCT_ID']; ?>">
                                           <div class="products">
                                               <h6 class="text-info"><?php echo $product['NAME']; ?></h6>
-                                              <h6>₱ <?php echo $product['PRICE']; ?></h6>
+                                              <h6>S/ <?php echo $product['PRICE']; ?></h6>
                                               <input type="text" name="quantity" class="form-control" value="1" />
                                               <input type="hidden" name="name" value="<?php echo $product['NAME']; ?>" />
                                               <input type="hidden" name="price" value="<?php echo $product['PRICE']; ?>" />
@@ -197,7 +197,7 @@
                                       <form method="post" action="pos.php?action=add&id=<?php echo $product['PRODUCT_ID']; ?>">
                                           <div class="products">
                                               <h6 class="text-info"><?php echo $product['NAME']; ?></h6>
-                                              <h6>₱ <?php echo $product['PRICE']; ?></h6>
+                                              <h6>S/ <?php echo $product['PRICE']; ?></h6>
                                               <input type="text" name="quantity" class="form-control" value="1" />
                                               <input type="hidden" name="name" value="<?php echo $product['NAME']; ?>" />
                                               <input type="hidden" name="price" value="<?php echo $product['PRICE']; ?>" />
@@ -227,7 +227,7 @@
                                       <form method="post" action="pos.php?action=add&id=<?php echo $product['PRODUCT_ID']; ?>">
                                           <div class="products">
                                               <h6 class="text-info"><?php echo $product['NAME']; ?></h6>
-                                              <h6>₱ <?php echo $product['PRICE']; ?></h6>
+                                              <h6>S/ <?php echo $product['PRICE']; ?></h6>
                                               <input type="text" name="quantity" class="form-control" value="1" />
                                               <input type="hidden" name="name" value="<?php echo $product['NAME']; ?>" />
                                               <input type="hidden" name="price" value="<?php echo $product['PRICE']; ?>" />
@@ -257,7 +257,7 @@
                                       <form method="post" action="pos.php?action=add&id=<?php echo $product['PRODUCT_ID']; ?>">
                                           <div class="products">
                                               <h6 class="text-info"><?php echo $product['NAME']; ?></h6>
-                                              <h6>₱ <?php echo $product['PRICE']; ?></h6>
+                                              <h6>S/ <?php echo $product['PRICE']; ?></h6>
                                               <input type="text" name="quantity" class="form-control" value="1" />
                                               <input type="hidden" name="name" value="<?php echo $product['NAME']; ?>" />
                                               <input type="hidden" name="price" value="<?php echo $product['PRICE']; ?>" />

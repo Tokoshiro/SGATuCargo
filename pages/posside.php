@@ -9,28 +9,28 @@
         ?>  
         <?php  
                   $total = $total + ($product['quantity'] * $product['price']);
-                  $lessvat = ($total / 1.12) * 0.12;
-                  $netvat = ($total / 1.12);
-                  $addvat = ($total / 1.12) * 0.12;
+                  $lessvat = ($total / 1.18) * 0.18;
+                  $netvat = ($total / 1.18);
+                  $addvat = ($total / 1.18) * 0.18;
 
              endforeach;
 
 //DROPDOWN FOR CUSTOMER
-$sql = "SELECT CUST_ID, FIRST_NAME, LAST_NAME
+$sql = "SELECT CUST_ID, FIRST_NAME, RUC
         FROM customer
         order by FIRST_NAME asc";
 $res = mysqli_query($db, $sql) or die ("Error SQL: $sql");
 
 $opt = "<select class='form-control'  style='border-radius: 0px;' name='customer' required>
-        <option value='' disabled selected hidden>Select Customer</option>";
+        <option value='' disabled selected hidden>Seleccionar Cliente</option>";
   while ($row = mysqli_fetch_assoc($res)) {
-    $opt .= "<option value='".$row['CUST_ID']."'>".$row['FIRST_NAME'].' '.$row['LAST_NAME']."</option>";
+    $opt .= "<option value='".$row['CUST_ID']."'>".$row['FIRST_NAME'].' '.$row['RUC']."</option>";
   }
 $opt .= "</select>";
 // END OF DROP DOWN
         ?>  
 <?php 
-          echo "Today's date is : "; 
+          echo "TLa fecha de hoy es : "; 
           $today = date("Y-m-d H:i a"); 
           echo $today; 
 ?> 
@@ -52,7 +52,7 @@ $opt .= "</select>";
             <div class="col-sm-7">
               <div class="input-group mb-2">
                 <div class="input-group-prepend">
-                  <span class="input-group-text">₱</span>
+                  <span class="input-group-text">S/</span>
                 </div>
                 <input type="text" class="form-control text-right " value="<?php echo number_format($total, 2); ?>" readonly name="subtotal">
               </div>
@@ -70,7 +70,7 @@ $opt .= "</select>";
             <div class="col-sm-7">
               <div class="input-group mb-2">
                 <div class="input-group-prepend">
-                  <span class="input-group-text">₱</span>
+                  <span class="input-group-text">S/</span>
                 </div>
                 <input type="text" class="form-control text-right " value="<?php echo number_format($lessvat, 2); ?>" readonly name="lessvat">
               </div>
@@ -88,7 +88,7 @@ $opt .= "</select>";
             <div class="col-sm-7">
               <div class="input-group mb-2">
                 <div class="input-group-prepend">
-                  <span class="input-group-text">₱</span>
+                  <span class="input-group-text">S/</span>
                 </div>
                 <input type="text" class="form-control text-right " value="<?php echo number_format($netvat, 2); ?>" readonly name="netvat">
               </div>
@@ -106,7 +106,7 @@ $opt .= "</select>";
             <div class="col-sm-7">
               <div class="input-group mb-2">
                 <div class="input-group-prepend">
-                  <span class="input-group-text">₱</span>
+                  <span class="input-group-text">S/</span>
                 </div>
                 <input type="text" class="form-control text-right " value="<?php echo number_format($addvat, 2); ?>" readonly name="addvat">
               </div>
@@ -124,7 +124,7 @@ $opt .= "</select>";
             <div class="col-sm-7">
               <div class="input-group mb-2">
                 <div class="input-group-prepend">
-                  <span class="input-group-text">₱</span>
+                  <span class="input-group-text">S/</span>
                 </div>
                 <input type="text" class="form-control text-right " value="<?php echo number_format($total, 2); ?>" readonly name="total">
               </div>
@@ -149,10 +149,10 @@ $opt .= "</select>";
 
                     <div class="col-sm-12 text-center">
                       <h3 class="py-0">
-                      GRAN TOTAL
+                      Total a Cancelar
                       </h3>
                       <h3 class="font-weight-bold py-3 bg-light">
-                        ₱ <?php echo number_format($total, 2); ?>
+                        S/ <?php echo number_format($total, 2); ?>
                       </h3>
                     </div>
 
@@ -161,9 +161,9 @@ $opt .= "</select>";
                     <div class="col-sm-12 mb-2">
                       <div class="input-group mb-2">
                         <div class="input-group-prepend">
-                          <span class="input-group-text">₱</span>
+                          <span class="input-group-text">S/</span>
                         </div>
-                          <input class="form-control text-right" id="txtNumber" onkeypress="return isNumberKey(event)" type="text" name="cash" placeholder="ENTER CASH" name="cash" required>
+                          <input class="form-control text-right" id="txtNumber" onkeypress="return isNumberKey(event)" type="text" name="cash" placeholder="INGRESAR CANTIDAD" name="cash" required>
                     </div>
                   </div>
               </div>

@@ -30,9 +30,9 @@ include'../includes/sidebar.php';
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"> 
                <thead>
                    <tr>
-                     <th width="19%"> Número de transacción</th>
+                     <th width="19%">ID transacción</th>
                      <th>Cliente</th>
-                     <th width="13%"># de artículos</th>
+                     <th width="13%">Cantidad de Lotes</th>
                      <th width="11%">Action</th>
                    </tr>
                </thead>
