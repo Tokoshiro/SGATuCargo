@@ -103,11 +103,14 @@ window.onload = function() {
         </div>
         <div class="modal-body">
           <form role="form" method="post" action="cust_pos_trans.php?action=add">
-            <div class="form-group">
-              <input class="form-control" placeholder="First Name" name="firstname" required>
+          <div class="form-group">
+              <input class="form-control" placeholder="RUC" name="ruc" required>
+            </div>  
+          <div class="form-group">
+              <input class="form-control" placeholder="Razón Social" name="firstname" required>
             </div>
             <div class="form-group">
-              <input class="form-control" placeholder="Last Name" name="lastname" required>
+              <input class="form-control" placeholder="Nombre Comercial" name="lastname" required>
             </div>
             <div class="form-group">
               <input class="form-control" placeholder="Phone Number" name="phonenumber" required>
