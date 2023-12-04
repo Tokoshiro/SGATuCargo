@@ -30,14 +30,17 @@ $opt = "<select class='form-control' name='category'>
 
 $opt .= "</select>";
 
-  $query = 'SELECT PRODUCT_ID, NAME,PRODUCT_CODE,QTY_STOCK,COMPANY_NAME, c.CNAME FROM product p join category c on p.CATEGORY_ID=c.CATEGORY_ID JOIN supplier s ON p.SUPPLIER_ID=s.SUPPLIER_ID WHERE PRODUCT_ID ='.$_GET['id'];
+//CONTRAC_ID
+
+  $query = 'SELECT PRODUCT_ID, NAME,PRODUCT_CODE,FIRST_NAME,DISPONIBILIDAD,COMPANY_NAME, c.CNAME FROM product p join category c on p.CATEGORY_ID=c.CATEGORY_ID JOIN supplier s ON p.SUPPLIER_ID=s.SUPPLIER_ID WHERE PRODUCT_ID ='.$_GET['id'];
   $result = mysqli_query($db, $query) or die(mysqli_error($db));
     while($row = mysqli_fetch_array($result))
     {   
       $zz = $row['PRODUCT_ID'];
       $A = $row['NAME'];
       $zzz = $row['PRODUCT_CODE'];
-      $B = $row['QTY_STOCK'];
+      $NAM = $row['FIRST_NAME'];
+      $B = $row['DISPONIBILIDAD'];
       $D = $row['COMPANY_NAME'];
       $E = $row['CNAME'];
     }
@@ -73,10 +76,18 @@ $opt .= "</select>";
               </div>
               <div class="form-group row text-left text-warning">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                Cantidad:
+                Nombre del Cliente:
                 </div>
                 <div class="col-sm-9">
-                  <input class="form-control" placeholder="Quantity" name="qty" value="<?php echo $B; ?>" required>
+                  <input class="form-control" value="<?php echo $NAM; ?>" readonly>
+                </div>
+              </div>
+              <div class="form-group row text-left text-warning">
+                <div class="col-sm-3" style="padding-top: 5px;">
+                Disponibilidad:
+                </div>
+                <div class="col-sm-9">
+                  <input class="form-control"  value="<?php echo $B; ?>" required>
                 </div>
               </div>
               

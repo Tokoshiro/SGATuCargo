@@ -4,7 +4,7 @@ include('../includes/connection.php');
             $a = $_POST['qty'];
             
 		
-	 			$query = 'UPDATE product set QTY_STOCK="'.$a.'" WHERE
+	 			$query = 'UPDATE product set DISPONIBILIDAD="'.$a.'" WHERE
 					PRODUCT_ID ="'.$zz.'"';
 					$result = mysqli_query($db, $query) or die(mysqli_error($db));
 ?>	
