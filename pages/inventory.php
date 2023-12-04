@@ -40,23 +40,21 @@ include'../includes/sidebar.php';
                </thead>
           <tbody>
 <?php                  
-    $query = 'SELECT PRODUCT_ID,  NAME,PRODUCT_CODE,DISPONIBILIDAD, CNAME, DATE_STOCK_IN FROM product p join category c on p.CATEGORY_ID=c.CATEGORY_ID GROUP BY PRODUCT_CODE';
-        $result = mysqli_query($db, $query) or die (mysqli_error($db));
-      
-            while ($row = mysqli_fetch_assoc($result)) {
-                                 
-                echo '<tr>';
-                echo '<td>'. $row['NAME'].'</td>';
-                echo '<td>'. $row['PRODUCT_CODE'].'</td>';
-               
-                echo '<td>'. $row['DISPONIBILIDAD'].'</td>';
-                echo '<td>'. $row['CNAME'].'</td>';
-                echo '<td>'. $row['DATE_STOCK_IN'].'</td>';
-                      echo '<td align="right">
-                              <a type="button" class="btn btn-primary bg-gradient-primary" href="inv_searchfrm.php?action=edit & id='.$row['PRODUCT_CODE'] . '"><i class="fas fa-fw fa-th-list"></i> Ver</a>
-                          </div> </td>';
-                echo '</tr> ';
-                        }
+    query = 'SELECT * FROM product p join customer c on p.CUST_ID=c.CUST_ID join category ca on p.CATEGORY_ID=ca.CATEGORY_ID GROUP BY PRODUCT_CODE;';
+    $result = mysqli_query($db, $query) or die (mysqli_error($db));
+        while ($row = mysqli_fetch_assoc($result)) {            
+            echo '<tr>';
+            echo '<td>'. $row['NAME'].'</td>';
+            echo '<td>'. $row['PRODUCT_CODE'].'</td>';
+            echo '<td>'. $row['FIRST_NAME'].'</td>';
+            echo '<td>'. $row['DISPONIBILIDAD'].'</td>';
+            echo '<td>'. $row['CNAME'].'</td>';
+            echo '<td>'. $row['DATE_STOCK_IN'].'</td>';
+                  echo '<td align="right">
+                          <a type="button" class="btn btn-primary bg-gradient-primary" href="inv_searchfrm.php?action=edit & id='.$row['PRODUCT_CODE'] . '"><i class="fas fa-fw fa-th-list"></i> Ver</a>
+                      </div> </td>';
+            echo '</tr> ';
+                    }
 ?> 
                                     
                                 </tbody>
