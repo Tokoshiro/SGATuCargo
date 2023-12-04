@@ -48,7 +48,7 @@ include'../includes/sidebar.php';
                 echo '<tr>';
                 echo '<td>'. $row['NAME'].'</td>';
                 echo '<td>'. $row['PRODUCT_CODE'].'</td>';
-                echo '<td>'. $row['FIRST_NAME'].'</td>';
+               
                 echo '<td>'. $row['DISPONIBILIDAD'].'</td>';
                 echo '<td>'. $row['CNAME'].'</td>';
                 echo '<td>'. $row['DATE_STOCK_IN'].'</td>';
