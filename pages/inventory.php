@@ -40,7 +40,7 @@ include'../includes/sidebar.php';
                </thead>
           <tbody>
 <?php                  
-    $query = 'SELECT PRODUCT_ID,  NAME,PRODUCT_CODE,FIRST_NAME, COUNT(`DISPONIBILIDAD`) AS "DISPONIBILIDAD", CNAME, DATE_STOCK_IN FROM product p join category c on p.CATEGORY_ID=c.CATEGORY_ID GROUP BY PRODUCT_CODE';
+    $query = 'SELECT PRODUCT_ID,  NAME,PRODUCT_CODE,DISPONIBILIDAD, CNAME, DATE_STOCK_IN FROM product p join category c on p.CATEGORY_ID=c.CATEGORY_ID GROUP BY PRODUCT_CODE';
         $result = mysqli_query($db, $query) or die (mysqli_error($db));
       
             while ($row = mysqli_fetch_assoc($result)) {
