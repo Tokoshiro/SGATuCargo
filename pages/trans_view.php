@@ -47,7 +47,7 @@ include'../includes/sidebar.php';
               <div class="form-group row text-left mb-0">
                 <div class="col-sm-9">
                   <h5 class="font-weight-bold">
-                  Ventas e Inventario
+                  Detalles del contrato
                   </h5>
                 </div>
                 <div class="col-sm-3 py-1">
@@ -59,6 +59,9 @@ include'../includes/sidebar.php';
 <hr>
               <div class="form-group row text-left mb-0 py-2">
                 <div class="col-sm-4 py-1">
+                  <h5 class="font-weight-bold">
+                    Cliente:
+                  </h5>
                   <h6 class="font-weight-bold">
                     <?php echo $fname; ?> <?php echo $lname; ?>
                   </h6>
@@ -72,7 +75,7 @@ include'../includes/sidebar.php';
                   Transacción #<?php echo $tid; ?>
                   </h6>
                   <h6 class="font-weight-bold">
-                  Codificador: <?php echo $role; ?>
+                  Vendedor: <?php echo $role; ?>
                   </h6>
                   <h6>
                     <?php echo $roles; ?>

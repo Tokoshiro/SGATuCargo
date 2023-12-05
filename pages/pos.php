@@ -104,7 +104,7 @@ function pre_r($array){
   
         <table class="table">    
         <tr>  
-             <th width="55%">Lote perteneciente a</th>  
+             <th width="55%">Contrato perteneciente a</th>  
              <th width="10%">Cantidad</th>  
              <th width="15%">Precio</th>  
              <th width="15%">Total</th>  

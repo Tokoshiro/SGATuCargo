@@ -30,7 +30,7 @@ $opt .= "</select>";
 // END OF DROP DOWN
         ?>  
 <?php 
-          echo "TLa fecha de hoy es : "; 
+          echo "La fecha de hoy es : "; 
           $today = date("Y-m-d H:i a"); 
           echo $today; 
 ?> 
