@@ -27,7 +27,7 @@ include'../includes/sidebar.php';
             <a href="product.php?action=add" type="button" class="btn btn-primary bg-gradient-primary btn-block"> <i class="fas fa-flip-horizontal fa-fw fa-share"></i> Back</a>
             <div class="card-body">
           <?php 
-            $query = 'SELECT CONTRAC_ID, ca.CNAME, cu.FIRST_NAME, DATE_STOCK_IN, DATE_STOCK_OUT,DESCRIPTION, PRICE FROM contrac c JOIN category ca ON c.CATEGORY_ID = ca.CATEGORY_ID JOIN customer cu ON c.CUST_ID = cu.CUST_ID WHERE CONTRAC_ID ='.$_GET['id'];
+            $query = 'SELECT CONTRAC_ID, ca.CNAME, cu.FIRST_NAME, DATE_STOCK_IN, DATE_STOCK_OUT,DESCRIPTION, PRICE, CANT_LOTES FROM contrac c JOIN category ca ON c.CATEGORY_ID = ca.CATEGORY_ID JOIN customer cu ON c.CUST_ID = cu.CUST_ID WHERE CONTRAC_ID ='.$_GET['id'];
             $result = mysqli_query($db, $query) or die(mysqli_error($db));
               while($row = mysqli_fetch_array($result))
               {   
@@ -37,6 +37,7 @@ include'../includes/sidebar.php';
                 $stock_in=$row['DATE_STOCK_IN'];
                 $stock_out=$row['DATE_STOCK_OUT'];
                 $des=$row['DESCRIPTION'];
+                $cant=$row['CANT_LOTES'];
                 $price=$row['PRICE'];
               }
               $id = $_GET['id'];
@@ -111,6 +112,18 @@ include'../includes/sidebar.php';
                       <div class="col-sm-9">
                         <h5>
                           : <?php echo $des; ?><br>
+                        </h5>
+                      </div>
+                    </div>
+                    <div class="form-group row text-left">
+                      <div class="col-sm-3 text-primary">
+                        <h5>
+                        Cantidad de Lotes<br>
+                        </h5>
+                      </div>
+                      <div class="col-sm-9">
+                        <h5>
+                          : <?php echo $cant; ?><br>
                         </h5>
                       </div>
                     </div>
