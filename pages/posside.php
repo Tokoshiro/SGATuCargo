@@ -22,7 +22,7 @@ $sql = "SELECT CUST_ID, FIRST_NAME, RUC
 $res = mysqli_query($db, $sql) or die ("Error SQL: $sql");
 
 $opt = "<select class='form-control'  style='border-radius: 0px;' name='customer' required>
-        <option value='' disabled selected hidden>Seleccionar Cliente</option>";
+        <option value='' disabled selected hidden>Seleccionar Vendedor</option>";
   while ($row = mysqli_fetch_assoc($res)) {
     $opt .= "<option value='".$row['CUST_ID']."'>".$row['FIRST_NAME'].' '.$row['RUC']."</option>";
   }
@@ -61,27 +61,14 @@ $opt .= "</select>";
           </div>
           <div class="form-group row mb-2">
 
-            <div class="col-sm-5 text-left text-primary py-2">
-              <h6>
-              Menos IVA
-              </h6>
-            </div>
-
-            <div class="col-sm-7">
-              <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">S/</span>
-                </div>
-                <input type="text" class="form-control text-right " value="<?php echo number_format($lessvat, 2); ?>" readonly name="lessvat">
-              </div>
-            </div>
+            
 
           </div>
           <div class="form-group row mb-2">
 
             <div class="col-sm-5 text-left text-primary py-2">
               <h6>
-              Neto de IVA
+              Neto de IGV
               </h6>
             </div>
 
@@ -99,7 +86,7 @@ $opt .= "</select>";
 
             <div class="col-sm-5 text-left text-primary py-2">
               <h6>
-              Agregar IVA
+              Agregar IGV
               </h6>
             </div>
 
